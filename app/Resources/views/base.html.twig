@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Articles{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="container">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

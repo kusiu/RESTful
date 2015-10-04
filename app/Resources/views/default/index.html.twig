@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Article list</h1>
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.content }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('article_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}
