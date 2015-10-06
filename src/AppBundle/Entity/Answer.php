@@ -23,7 +23,7 @@ class Answer
 
     /**
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="answers")
-     * @ORM\JoinColumn(name="article", referencedColumnName="id")
+     * @ORM\JoinColumn(name="article", referencedColumnName="id", onDelete="CASCADE")
      **/
     private $article;
 
