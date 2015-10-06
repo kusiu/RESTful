@@ -34,8 +34,6 @@ class ArticleController extends Controller
      */
     public function getUsers(Request $request) {
 
-
-
         $article = new Article();
 
         $form = $this->createForm(new ArticleType(), $article);

@@ -23,7 +23,7 @@ class Rate
 
     /**
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="rates")
-     * @ORM\JoinColumn(name="article", referencedColumnName="id")
+     * @ORM\JoinColumn(name="article", referencedColumnName="id", onDelete="CASCADE")
      **/
     private $article;
 

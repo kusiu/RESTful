@@ -9,6 +9,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use AppBundle\Entity\Answer;
 use AppBundle\Entity\Article;
+use AppBundle\Entity\Rate;
 
 class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
 {
@@ -29,6 +30,14 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
         $answer2->setContent('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.');
         $answer2->setArticle($article1);
 
+        $rate1 = new Rate();
+        $rate1->setValue(1);
+        $rate1->setArticle($article1);
+
+        $rate2 = new Rate();
+        $rate2->setValue(5);
+        $rate2->setArticle($article1);
+
         $article2 = new Article();
         $article2->setTitle('Article 2');
         $article2->setContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
@@ -36,6 +45,8 @@ class LoadArticleData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($article1);
         $manager->persist($answer1);
         $manager->persist($answer2);
+        $manager->persist($rate1);
+        $manager->persist($rate2);
         $manager->persist($article2);
         $manager->flush();
     }
